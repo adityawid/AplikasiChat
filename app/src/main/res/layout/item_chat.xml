@@ -9,7 +9,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:id="@+id/ivItemPoster"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/coworkers"
         android:scaleType="centerCrop"/>
 
     <LinearLayout
@@ -41,5 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="tanggal"
+        android:lines="2"
+        android:textSize="12sp"
         android:id="@+id/tvItemDate"/>
 </LinearLayout>

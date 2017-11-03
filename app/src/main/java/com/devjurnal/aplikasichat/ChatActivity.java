@@ -17,8 +17,8 @@ public class ChatActivity extends AppCompatActivity {
 
     SharedPreferences myPreference;
     EditText edtNamaChat,edtIsiChat;
-
     SharedPreferences.Editor spEdit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

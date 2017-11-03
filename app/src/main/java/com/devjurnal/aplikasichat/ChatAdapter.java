@@ -18,6 +18,7 @@ import org.json.JSONObject;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder>{
     JSONArray jsonArray;
+    int fotoChat[];
     public ChatAdapter(JSONArray jsonArray) {
         this.jsonArray = jsonArray;
     }

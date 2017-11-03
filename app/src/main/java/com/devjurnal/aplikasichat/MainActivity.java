@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -18,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     SharedPreferences myPreference;
 
-    int imageResource[]= {R.mipmap.ic_launcher,R.mipmap.ic_launcher};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,5 +56,29 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         finish();
         startActivity(getIntent());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.list_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch ( item.getItemId())
+        {
+            case  R.id.menuClear:
+                SharedPreferences sharedPreferences = getSharedPreferences(ADD_PREF,MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();
+                editor.apply();
+                onRestart();
+                break;
+
+        }
+
+        return true;
     }
 }
